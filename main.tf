@@ -9,10 +9,11 @@ terraform {
 
 provider "snowflake" {
   role = "RYGN_DT_LVELASQUEZ"
+  private_key_passphrase = "RyGn_2023*"
 }
 
 data "snowflake_database" "existing_db" {
-  name = "nova_analytics_uat_clone"
+  name = "RYGN_DT_LVELASQUEZ_NOVA_ANALYTICS_CLONE"
 }
 
 resource "snowflake_schema" "schema" {
