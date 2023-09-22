@@ -21,3 +21,15 @@ resource "snowflake_schema" "schema" {
   name       = "TF_DEMO"
   is_managed = false
 }
+
+data "snowflake_role" "this" {
+  name = "RYGN_DT_LVELASQUEZ"
+}
+
+output "role" {
+  value = data.snowflake_role.this
+}
+
+output "database" {
+  value = data.snowflake_database.existing_db
+}
